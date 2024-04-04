@@ -10,7 +10,6 @@ CPF  varchar(11),
 telefone varchar (12),
 Endereço varchar(255),
 Email varchar(50),
-Id_cliente varchar(50),
 primary key(Id_cliente));
 
 create table pizzas (
@@ -86,3 +85,9 @@ VALUES
 ('3', '3', '3', 'Travessa das Flores, 789', '2024-04-06 20:45:00'),
 ('4', '4', '2', 'Rua das Estrelas, 789', '2024-04-07 21:15:00'),
 ('5', '5', '1', 'Avenida das Águas, 456', '2024-04-08 22:30:00');
+
+select * from cliente;
+select * from pizzas;
+select * from fornecedores;
+select * from funcionários;
+select * from pedido;
