@@ -46,7 +46,6 @@ horario_pedido varchar(50),
 atendente varchar(50),
 foreign key (Id_cliente) references cliente(Id_cliente),
 foreign key (Id_pizza) references pizzas(Id_pizza),
-foreign key (endereço) references cliente(endereço),
 foreign key (atendente) references funcionários(Nome));
 
 INSERT INTO cliente (Id_cliente, Nome, CPF, telefone, Endereço, Email)
