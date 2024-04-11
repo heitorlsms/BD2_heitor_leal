@@ -43,8 +43,11 @@ Id_pizza varchar(50),
 Quantidade varchar(50),
 endereço varchar(50),
 horario_pedido varchar(50),
+atendente varchar(50),
 foreign key (Id_cliente) references cliente(Id_cliente),
-foreign key (Id_pizza) references pizzas(Id_pizza));
+foreign key (Id_pizza) references pizzas(Id_pizza),
+foreign key (endereço) references cliente(endereço),
+foreign key (atendente) references funcionários(Nome));
 
 INSERT INTO cliente (Id_cliente, Nome, CPF, telefone, Endereço, Email)
 VALUES 
@@ -86,8 +89,3 @@ VALUES
 ('4', '4', '2', 'Rua das Estrelas, 789', '2024-04-07 21:15:00'),
 ('5', '5', '1', 'Avenida das Águas, 456', '2024-04-08 22:30:00');
 
-select * from cliente;
-select * from pizzas;
-select * from fornecedores;
-select * from funcionários;
-select * from pedido;
