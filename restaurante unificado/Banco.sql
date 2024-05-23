@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS Funcionarios(
 	ID_filial int(3),
 	Cargo varchar(255),
 	Data_contatacao datetime,
-	PRIMARY KEY (ID_func) 
-	FOREIGN KEY (ID_filial) REFERENCES Filiais(ID_filial)
+	PRIMARY KEY (ID_func),
+	foreign key(ID_filial) REFERENCES Filiais(ID_filial)
 ); 
 
 -- Tabela de Reservas
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS Fornecedores(
 -- Tabela de Estoque
 CREATE TABLE IF NOT EXISTS Estoque( 
 	ID_fornecedor int(5), 
-	ID_materia varchar(6) AUTO_INCREMENT, 
+	ID_materia int(6) AUTO_INCREMENT, 
 	Quantidade int(5),
 	ID_filial int(3),
 	PRIMARY KEY (ID_materia), 
