@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS Clientes(
 	Endereco varchar(255), 
 	Email varchar(255), 
 	Telefone varchar(12),
-	Data_cadastro datetime, 
+	Data_cadastro datetime,
+    Senha  varchar(255) not null,
 	PRIMARY KEY (ID_cliente) 
 );
 
@@ -25,8 +26,12 @@ CREATE TABLE IF NOT EXISTS Filiais(
 	Email varchar(255), 
 	Telefone varchar(12), 
 	Quant_mesas int(3), 
-	Avaliacao decimal(4,2), 
-	PRIMARY KEY (ID_filial) 
+	Avaliacao decimal(4,2),
+    Cliente varchar(255),
+    Funcionario varchar(255),
+	PRIMARY KEY (ID_filial),
+    FOREIGN KEY(Cliente) REFERENCES Clientes(Nome),
+    FOREIGN KEY(Funcionario) REFERENCES Funcionarios(Nome) 
 );
 
 -- Tabela de Funcionários
@@ -137,3 +142,8 @@ CREATE TABLE IF NOT EXISTS Entregas(
 	PRIMARY KEY (ID_entrega), 
 	FOREIGN KEY (ID_pedido) REFERENCES Pedidos (ID_pedido) 
 ); 
+
+select * from Clientes where (id_clientes);
+select CPF, Nome, Endereco, Email, Senha, Telefone from Clientes;
+select Funcionarios, ID_filial from Filiais order by ID_filial ASC;
+select Cliente from Filiais order by Cliente ASC ;
